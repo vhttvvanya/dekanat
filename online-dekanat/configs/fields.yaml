@@ -1,0 +1,181 @@
+version: "1.0"
+document_types:
+  study_certificate:
+    label: "Справка об обучении"
+    detect_keywords:
+      - "справка об обучении"
+      - "направление подготовки"
+      - "форма обучения"
+      - "начало периода обучения"
+    required_rules: ["3.1", "3.2", "3.3"]
+    fields:
+      student_name:
+        label: "ФИО студента"
+        aliases: ["фио студента", "ф.и.о. студента"]
+        type: string
+        rule: "3.1"
+      university:
+        label: "Название вуза"
+        aliases: ["название вуза", "наименование вуза"]
+        type: string
+        rule: "3.1"
+      program:
+        label: "Направление подготовки"
+        aliases: ["направление подготовки", "образовательная программа"]
+        type: string
+        rule: "3.1"
+      study_form:
+        label: "Форма обучения"
+        aliases: ["форма обучения"]
+        type: string
+        rule: "3.1"
+      study_start:
+        label: "Начало периода обучения"
+        aliases: ["начало периода обучения", "период обучения с", "обучение с"]
+        type: date
+        rule: "3.1"
+      study_end:
+        label: "Окончание периода обучения"
+        aliases: ["окончание периода обучения", "период обучения по", "обучение по"]
+        type: date
+        rule: "3.1"
+      document_number:
+        label: "Номер справки"
+        aliases: ["номер справки", "номер документа"]
+        type: string
+        rule: "3.1"
+      issue_date:
+        label: "Дата выдачи"
+        aliases: ["дата выдачи"]
+        type: date
+        rule: "3.1"
+      signature_present:
+        label: "Подпись сотрудника"
+        aliases: ["подпись сотрудника", "подпись"]
+        mark_aliases: ["подпись"]
+        type: boolean
+        mark: signature
+        rule: "3.2"
+      seal_present:
+        label: "Печать вуза"
+        aliases: ["печать вуза", "печать", "м.п.", "м. п."]
+        mark_aliases: ["печать"]
+        type: boolean
+        mark: seal
+        rule: "3.3"
+
+  academic_leave_application:
+    label: "Заявление на академический отпуск"
+    detect_keywords:
+      - "заявление на академический отпуск"
+      - "учебная группа"
+      - "причина отпуска"
+      - "дата заявления"
+    required_rules: ["4.1", "4.2"]
+    fields:
+      student_name:
+        label: "ФИО студента"
+        aliases: ["фио студента", "ф.и.о. студента"]
+        type: string
+        rule: "4.1"
+      group:
+        label: "Учебная группа"
+        aliases: ["учебная группа", "группа"]
+        type: string
+        rule: "4.1"
+      course:
+        label: "Курс"
+        aliases: ["курс"]
+        type: integer_string
+        rule: "4.1"
+      leave_reason:
+        label: "Причина отпуска"
+        aliases: ["причина отпуска", "основание отпуска"]
+        type: string
+        rule: "4.1"
+      leave_start:
+        label: "Дата начала отпуска"
+        aliases: ["дата начала отпуска", "начало отпуска"]
+        type: date
+        rule: "4.1"
+      leave_end:
+        label: "Дата окончания отпуска"
+        aliases: ["дата окончания отпуска", "окончание отпуска"]
+        type: date
+        rule: "4.1"
+      application_date:
+        label: "Дата заявления"
+        aliases: ["дата заявления"]
+        type: date
+        rule: "4.1"
+      signature_present:
+        label: "Подпись студента"
+        aliases: ["подпись студента", "подпись"]
+        mark_aliases: ["подпись"]
+        type: boolean
+        mark: signature
+        rule: "4.2"
+
+  internship_certificate:
+    label: "Справка о практике"
+    detect_keywords:
+      - "справка о практике"
+      - "название организации"
+      - "руководитель практики"
+      - "дата начала практики"
+    required_rules: ["5.1", "5.2", "5.3"]
+    fields:
+      student_name:
+        label: "ФИО студента"
+        aliases: ["фио студента", "ф.и.о. студента"]
+        type: string
+        rule: "5.1"
+      organization:
+        label: "Название организации"
+        aliases: ["название организации", "организация"]
+        type: string
+        rule: "5.1"
+      internship_start:
+        label: "Дата начала практики"
+        aliases: ["дата начала практики", "период практики с", "практика с"]
+        type: date
+        rule: "5.1"
+      internship_end:
+        label: "Дата окончания практики"
+        aliases: ["дата окончания практики", "период практики по", "практика по"]
+        type: date
+        rule: "5.1"
+      supervisor_name:
+        label: "ФИО руководителя практики"
+        aliases: ["фио руководителя практики", "руководитель практики"]
+        type: string
+        rule: "5.1"
+      grade:
+        label: "Оценка"
+        aliases: ["оценка", "итоговая оценка"]
+        type: string
+        rule: "5.1"
+      document_number:
+        label: "Номер справки"
+        aliases: ["номер справки", "номер документа"]
+        type: string
+        rule: "5.1"
+      issue_date:
+        label: "Дата выдачи"
+        aliases: ["дата выдачи"]
+        type: date
+        rule: "5.1"
+      signature_present:
+        label: "Подпись руководителя"
+        aliases: ["подпись руководителя", "подпись"]
+        mark_aliases: ["подпись"]
+        type: boolean
+        mark: signature
+        rule: "5.2"
+      seal_present:
+        label: "Печать организации"
+        aliases: ["печать организации", "печать", "м.п.", "м. п."]
+        mark_aliases: ["печать"]
+        type: boolean
+        mark: seal
+        rule: "5.3"
